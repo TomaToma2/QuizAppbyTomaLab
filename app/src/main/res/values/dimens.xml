@@ -1,0 +1,30 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="welcomeBottom">16dp</dimen>
+    <dimen name="welcomeTop">16dp</dimen>
+    <dimen name="welcomeLeft">32dp</dimen>
+    <dimen name="welcomeRight">32dp</dimen>
+
+    <dimen name="editTextBottom">16dp</dimen>
+    <dimen name="editTextTop">16dp</dimen>
+    <dimen name="editTextLeft">32dp</dimen>
+    <dimen name="editTextRight">32dp</dimen>
+
+    <dimen name="dareDevilBottom">16dp</dimen>
+    <dimen name="dareDevilTop">16dp</dimen>
+    <dimen name="dareDevilLeft">32dp</dimen>
+    <dimen name="dareDevilRight">32dp</dimen>
+
+    <dimen name="QBottom">16dp</dimen>
+    <dimen name="QTop">16dp</dimen>
+    <dimen name="QLeft">32dp</dimen>
+    <dimen name="QRight">32dp</dimen>
+
+    <dimen name="QALeft">64dp</dimen>
+    <dimen name="QARight">64dp</dimen>
+
+
+</resources>

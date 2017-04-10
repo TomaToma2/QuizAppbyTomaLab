@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Quiz App by Toma Laboratory</string>
+    <string name="name_field">What is your name?</string>
+    <string name="welcome">Welcome To Knowledge Quiz</string>
+    <string name="intro">Hello DareDevil! \nYou are about to answer four science questions! \nThey are all listed below! \nGood Luck!</string>
+
+    <string name="questionOne">Question One:\nHow long do Blue Whales live?</string>
+    <string name="A1Q1">50 years</string>
+    <string name="A2Q1">80 years</string>
+    <string name="A3Q1">120 years</string>
+    <string name="A4Q1">160 years</string>
+
+    <string name="questionTwo">Question Two:\nWhat is the distance from Earths equator to geostational Earth orbit?</string>
+    <string name="A1Q2">42160km</string>
+    <string name="A2Q2">55425km</string>
+    <string name="A3Q2">35786km</string>
+    <string name="A4Q2">15768km</string>
+
+    <string name="questionThree">Question Three:\nWhat is the height of Mount Everest?\n(multiple answers)</string>
+    <string name="A1Q3">8848m</string>
+    <string name="A2Q3">8850m</string>
+    <string name="A3Q3">8808m</string>
+    <string name="A4Q3">8844m</string>
+
+    <string name="questionFour">Question Four:\nWhat is the weight of one cubic meter (1m3) of water? \n(multiple answers)</string>
+    <string name="A1Q4">1 ton</string>
+    <string name="A2Q4">100 kg</string>
+    <string name="A3Q4">1000 g</string>
+    <string name="A4Q4">1000 kg</string>
+
+    <string name="submit">Submit Your Answers</string>
+
+
+
+
+
+
+
+</resources>
