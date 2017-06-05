@@ -11,8 +11,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Objects;
-public class MainActivity extends AppCompatActivity {
 
+public class MainActivity extends AppCompatActivity {
 
 
     EditText eText;
@@ -42,16 +42,20 @@ public class MainActivity extends AppCompatActivity {
             wrongResultView.setText(wrongResult);
         }
     }
+
     public void onCheckboxClicked(View view) {
+
         // Is the view now checked?
-        boolean checked = ((CheckBox) view).isChecked();}
+        boolean checked = ((CheckBox) view).isChecked();
+    }
 
     public void onRadioButtonClicked(View view) {
         // Is the button now checked?
-        boolean checked = ((RadioButton) view).isChecked();}
+        boolean checked = ((RadioButton) view).isChecked();
+    }
 
 
-        @Override
+    @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         savedInstanceState.putInt("savedScore", score);
         savedInstanceState.putString("savedCorrect", correctResult);
@@ -62,9 +66,10 @@ public class MainActivity extends AppCompatActivity {
     /**
      * checks if a checkBox has been tapped.
      * function will be used for many CheckBoxes, thus for many IDs
+     *
      * @param idName the id of the CheckBox whose value is to be verified
      * @return returns true if the CheckBox is checked and false otherwise
-     * */
+     */
 
     public boolean getOptions(int idName) {
         CheckBox c = (CheckBox) findViewById(idName);
@@ -77,20 +82,20 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param idAnswerA id of the first checkbox in the group
      * @param answerA   correct answer for first checkbox in the group
-     * @param idAnswerB  id of the second checkbox in the group
+     * @param idAnswerB id of the second checkbox in the group
      * @param answerB   correct answer for second checkbox in the group
      * @param idAnswerC id of the third checkbox in the group
      * @param answerC   correct answer for third checkbox in the group
-     * @param idAnswerD  id of the fourth checkbox in the group
+     * @param idAnswerD id of the fourth checkbox in the group
      * @param answerD   cor1rect answer for fourth checkbox in the group
      * @return returns true if the user answered correctly and false otherwise
      */
 
-    public boolean checkBox(int idAnswerA, boolean answerA, int idAnswerB, boolean answerB, int idAnswerC, boolean answerC, int idAnswerD, boolean answerD ) {
+    public boolean checkBox(int idAnswerA, boolean answerA, int idAnswerB, boolean answerB, int idAnswerC, boolean answerC, int idAnswerD, boolean answerD) {
         boolean option1, option2, option3, option4;
         option1 = getOptions(idAnswerA);
         option2 = getOptions(idAnswerB);
-        option3 = getOptions(idAnswerC );
+        option3 = getOptions(idAnswerC);
         option4 = getOptions(idAnswerD);
         return option1 == answerA && option2 == answerB && option3 == answerC && option4 == answerD;
     }
@@ -111,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
             wrongResult += i + ". Incorrect(Correct Answer: " + solution + ")\n";
         }
     }
+
     /**
      * gathers all the answers from the previous questions and displays the results on the screen
      */
