@@ -12,6 +12,9 @@ import android.widget.Toast;
 
 import java.util.Objects;
 
+import static com.example.android.quizappbytomalab.R.id.radioQ1;
+import static com.example.android.quizappbytomalab.R.id.radioQ2;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -33,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         correctResult = correctResultView.getText().toString();
         wrongResultView = (TextView) findViewById(R.id.wrongResults);
         wrongResult = correctResultView.getText().toString();
+
         if (savedInstanceState != null) {
             score = savedInstanceState.getInt("savedScore");
             correctResult = savedInstanceState.getString("savedCorrect");
@@ -41,19 +45,104 @@ public class MainActivity extends AppCompatActivity {
             correctResultView.setText(correctResult);
             wrongResultView.setText(wrongResult);
         }
+
     }
 
+    // Check which checkBox was clicked
     public void onCheckboxClicked(View view) {
 
         // Is the view now checked?
         boolean checked = ((CheckBox) view).isChecked();
+
+        {
+            String selection = "";
+
+            switch (view.getId()) {
+                case R.id.A1Q3:
+                    if (checked)
+                        selection = "8848m";
+                    break;
+                case R.id.A2Q3:
+                    if (checked)
+                        selection = "8850m";
+                    break;
+                case R.id.A3Q3:
+                    if (checked)
+                        selection = "8808m";
+                    break;
+                case R.id.A4Q3:
+                    if (checked)
+                        selection = "8844m";
+                    break;
+                case R.id.A1Q4:
+                    if (checked)
+                        selection = "1 ton";
+                    break;
+                case R.id.A2Q4:
+                    if (checked)
+                        selection = "100 kg";
+                    break;
+                case R.id.A3Q4:
+                    if (checked)
+                        selection = "1000 g";
+                    break;
+                case R.id.A4Q4:
+                    if (checked)
+                        selection = "1000 kg";
+                    break;
+
+            }
+            Toast.makeText(this, selection, Toast.LENGTH_SHORT).show();
+        }
+
     }
 
+    //     Check which radio button was clicked
     public void onRadioButtonClicked(View view) {
-        // Is the button now checked?
+        //         Is the button now checked?
         boolean checked = ((RadioButton) view).isChecked();
-    }
+        {
+            String selection = "";
 
+            switch (view.getId()) {
+                case R.id.A1Q2:
+                    if (checked)
+                        selection = "42160km";
+                    break;
+                case R.id.A2Q2:
+                    if (checked)
+                        selection = "55425km";
+                    break;
+                case R.id.A3Q2:
+                    if (checked)
+                        selection = "35786km";
+                    break;
+                case R.id.A4Q2:
+                    if (checked)
+                        selection = "15768km";
+                    break;
+                case R.id.A1Q1:
+                    if (checked)
+                        selection = "50 years";
+                    break;
+                case R.id.A2Q1:
+                    if (checked)
+                        selection = "80 years";
+                    break;
+                case R.id.A3Q1:
+                    if (checked)
+                        selection = "120 years";
+                    break;
+                case R.id.A4Q1:
+                    if (checked)
+                        selection = "160 years";
+                    break;
+
+            }
+            Toast.makeText(this, selection, Toast.LENGTH_SHORT).show();
+        }
+
+    }
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
@@ -100,9 +189,17 @@ public class MainActivity extends AppCompatActivity {
         return option1 == answerA && option2 == answerB && option3 == answerC && option4 == answerD;
     }
 
-    public boolean checkRadio(int id, String solution) {
+    public boolean checkRadio1(int id, String solution) {
         RadioGroup radioQ1 = (RadioGroup) findViewById(id);
         int selectedID = radioQ1.getCheckedRadioButtonId();
+        RadioButton button = (RadioButton) findViewById(selectedID);
+        String text = button.getText().toString().toLowerCase();
+        return Objects.equals(text, solution);
+    }
+
+    public boolean checkRadio2(int id, String solution) {
+        RadioGroup radioQ2 = (RadioGroup) findViewById(id);
+        int selectedID = radioQ2.getCheckedRadioButtonId();
         RadioButton button = (RadioButton) findViewById(selectedID);
         String text = button.getText().toString().toLowerCase();
         return Objects.equals(text, solution);
@@ -112,6 +209,7 @@ public class MainActivity extends AppCompatActivity {
         if (answer) {
             correctResult += i + ". Correct\n";
             score++;
+
         } else {
             wrongResult += i + ". Incorrect(Correct Answer: " + solution + ")\n";
         }
@@ -122,17 +220,19 @@ public class MainActivity extends AppCompatActivity {
      */
 
     public void submitAnswers(View view) {
+
         score = 0;
+
         correctResult = "CORRECT ANSWERS\n";
         wrongResult = "INCORRECT ANSWERS\n";
 
         EditText editTextUserName = (EditText) findViewById(R.id.name_field);
         String UserName = editTextUserName.getText().toString();
 
-        boolean questionOne = checkRadio(R.id.radioQ1, "80 years");
+        boolean questionOne = checkRadio1(radioQ1, "80 years");
         checkAnswer(questionOne, "1", "80 years");
 
-        boolean questionTwo = checkRadio(R.id.radioQ2, "35786km");
+        boolean questionTwo = checkRadio2(radioQ2, "35786km");
         checkAnswer(questionTwo, "2", "35786km");
 
         boolean questionThree = checkBox(R.id.A1Q3, true, R.id.A2Q3, true, R.id.A3Q3, false, R.id.A4Q3, true);
